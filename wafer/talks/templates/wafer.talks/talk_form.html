@@ -20,6 +20,17 @@
       <em>Talk submission is closed</em>
     {% endblocktrans %}
   {% else %}
+    {% if form.errors %}
+    <div class="alert alert-danger">
+      The following field(s) contain erroneous values:
+      <ul compact>
+        {% for field in form.errors %}
+        <li>{{ field.verbose_name | escape }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+    {{ form.media }}
     {% crispy form %}
   {% endif %}
 </section>
