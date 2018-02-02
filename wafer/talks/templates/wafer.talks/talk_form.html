@@ -25,7 +25,7 @@
       The following field(s) contain erroneous values:
       <ul compact>
         {% for field in form.errors %}
-        <li>{{ field | escape }}</li>
+        <li>{{ field }}</li>
         {% endfor %}
       </ul>
     </div>
