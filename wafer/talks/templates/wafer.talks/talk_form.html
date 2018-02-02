@@ -25,7 +25,7 @@
       The following field(s) contain erroneous values:
       <ul compact>
         {% for field in form.errors %}
-          {% for field_n, field_o in form.fields %}
+          {% for field_n, field_o in form.fields.items %}
             {% if field == field_n %}
               <li>{{ field_o.verbose_name }}</li>
             {% endif %}
